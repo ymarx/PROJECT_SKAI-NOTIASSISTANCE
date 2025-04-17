@@ -1,0 +1,21 @@
+# Core dependencies
+pyyaml>=6.0
+openai>=1.0.0
+tiktoken>=0.5.0
+numpy>=1.20.0
+
+# Vector stores
+chromadb>=0.4.0
+# pinecone-client>=2.2.0  # Uncomment if using Pinecone
+# faiss-cpu>=1.7.0        # Uncomment if using FAISS
+
+# Model providers
+# anthropic>=0.5.0        # Uncomment if using Anthropic
+# transformers>=4.30.0    # Uncomment if using HuggingFace
+# torch>=2.0.0            # Uncomment if using local models
+# sentence-transformers>=2.2.0  # Uncomment if using local embedding models
+# huggingface-hub>=0.15.0 # Uncomment if using HuggingFace Inference API
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.65.0 

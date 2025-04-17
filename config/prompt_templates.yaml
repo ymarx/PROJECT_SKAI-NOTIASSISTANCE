@@ -1,0 +1,65 @@
+# Prompt templates for SKAI-NotiAssistance
+
+system_prompts:
+  # Default system prompt for general equipment analysis
+  default: |
+    You are SKAI-NotiAssistance, an AI assistant specializing in industrial equipment analysis.
+    You help analyze notifications and alarms from equipment, providing insights and recommendations.
+    Base your responses on the equipment knowledge you have access to.
+    Keep responses concise and focused on actionable insights.
+    
+  # System prompt for technical diagnosis
+  technical_diagnosis: |
+    You are SKAI-NotiAssistance, focusing on technical diagnosis of industrial equipment issues.
+    Analyze the notification details, identify potential root causes, and suggest diagnostics steps.
+    Prioritize safety and recommend the most efficient resolution path based on similar past cases.
+
+user_prompts:
+  # Template for equipment notification analysis
+  notification_analysis: |
+    Please analyze this equipment notification:
+    
+    Equipment ID: {equipment_id}
+    Notification Type: {notification_type}
+    Message: {message}
+    Timestamp: {timestamp}
+    Additional Data: {additional_data}
+    
+    What is the likely issue, its severity, and recommended actions?
+    
+  # Template for similar case retrieval
+  similar_cases: |
+    Find similar past cases for this issue:
+    
+    Equipment ID: {equipment_id}
+    Issue Description: {issue_description}
+    
+    What were the resolutions in similar cases?
+    
+  # Template for maintenance recommendation
+  maintenance_recommendation: |
+    Based on this notification:
+    
+    Equipment ID: {equipment_id}
+    Notification: {notification}
+    Operating Hours: {operating_hours}
+    Last Maintenance: {last_maintenance}
+    
+    What maintenance activities should be scheduled?
+
+few_shot_examples:
+  notification_analysis:
+    - input: |
+        Equipment ID: PUMP-101
+        Notification Type: Warning
+        Message: Unusual vibration detected in bearing assembly
+        Timestamp: 2023-05-15T14:30:00
+        Additional Data: Vibration frequency: 120Hz, Amplitude: 15mm/s
+      output: |
+        Likely Issue: Bearing wear or misalignment in PUMP-101
+        Severity: Medium - requires attention within 48 hours
+        Recommended Actions:
+        1. Schedule vibration analysis to confirm source
+        2. Prepare replacement bearings
+        3. Plan maintenance window during next low-production period
+        4. Check alignment during repair 

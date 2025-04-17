@@ -1,0 +1,2 @@
+# PROJECT_SKAI-NOTIASSISTANCE
+ SKEnergy_NotiAssistant
